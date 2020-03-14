@@ -1,0 +1,3 @@
+[submodule "Vendor/stm32-hal-libraries"]
+	path = Vendor/stm32-hal-libraries
+	url = git@github.com:belyalov/stm32-hal-libraries.git
