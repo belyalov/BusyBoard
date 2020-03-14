@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "DEBUGLN",
+        "EXTI",
+        "GPIO",
         "HEXLN",
         "hadc",
         "hspi",

@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=/Users/belyalov/lora/LoRa_BusyBoard/Inc
+HeaderPath=/Users/belyalov/BusyBoard/Inc
 HeaderFiles=stm32l1xx_it.h;stm32l1xx_hal_conf.h;main.h;
-SourcePath=/Users/belyalov/lora/LoRa_BusyBoard/Src
+SourcePath=/Users/belyalov/BusyBoard/Src
 SourceFiles=stm32l1xx_it.c;stm32l1xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
