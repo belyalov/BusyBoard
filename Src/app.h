@@ -12,6 +12,8 @@
 #define DEBUG_UINT_HEXLN(s, v)     debug_print_hex64ln(&huart1, s, v)
 
 extern UART_HandleTypeDef huart1;
+extern SPI_HandleTypeDef hspi1;
+// extern ADC_HandleTypeDef hadc;
 
 void app();
 void fatal_error(int delay);
