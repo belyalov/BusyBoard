@@ -100,33 +100,40 @@ void turn_leds_off(uint32_t leds)
   transfer_leds_state();
 }
 
-    // Main application //
+// Main application //
 void app()
 {
   // Init configuration //
   DEBUGLN("\nBusyBoard started!");
 
-  uint32_t leds = digit_mapping[2];
-  int cnt = 0;
-  uint8_t all_off[4] = {};
+  // uint32_t leds = digit_mapping[2];
+  // int cnt = 0;
+  // uint8_t all_off[4] = {};
 
   // set_digit(8);
   // turn_leds_off(1<<31);
-  HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_SET);
-  // turn_leds_on(0xffffffff);
-  set_digit(8);
-  HAL_Delay(5000);
-  turn_leds_off(0xffffffff);
-  HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_SET);
+  // // turn_leds_on(0xffffffff);
+  // set_digit(8);
+  // HAL_Delay(5000);
+  // turn_leds_off(0xffffffff);
+  // HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_RESET);
 
-  HAL_Delay(1000);
+  // HAL_Delay(1000);
   // HAL_SPI_DeInit(&hspi1);
   // HAL_GPIO_WritePin(LATCH_GPIO_Port, LATCH_Pin, GPIO_PIN_RESET);
-  HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-  __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
-  SystemClock_Config();
+  // disable_all_peripheral();
+  // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+  // __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
+  // SystemClock_Config();
 
   while (1) {
+    HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_SET);
+    set_digit(8);
+    HAL_Delay(2000);
+    turn_leds_off(0xffffffff);
+
+    deep_sleep();
     // turn_leds_on(0xffffffff);
     // HAL_Delay(5000);
     // turn_leds_off(0xffffffff);
@@ -150,8 +157,8 @@ void app()
     // HAL_GPIO_WritePin(LATCH_GPIO_Port, LATCH_Pin, GPIO_PIN_RESET);
     // HAL_SPI_Transmit(&hspi1, all_off, 4, 1000);
     // HAL_GPIO_WritePin(LATCH_GPIO_Port, LATCH_Pin, GPIO_PIN_SET);
-    HAL_Delay(5000);
-    cnt++;
+    // HAL_Delay(5000);
+    // cnt++;
   }
 }
 

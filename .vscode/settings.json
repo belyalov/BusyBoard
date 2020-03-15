@@ -3,6 +3,8 @@
         "DEBUGLN",
         "EXTI",
         "GPIO",
+        "GPIOA",
+        "GPIOB",
         "HEXLN",
         "hadc",
         "hspi",

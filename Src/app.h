@@ -16,7 +16,6 @@ extern SPI_HandleTypeDef hspi1;
 // extern ADC_HandleTypeDef hadc;
 
 void app();
-void fatal_error(int delay);
-void assert_error(uint32_t error);
+void deep_sleep();
 
 #endif
