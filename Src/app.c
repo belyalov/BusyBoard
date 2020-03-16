@@ -70,6 +70,7 @@ void app()
 
     // Buttons by colors
     if (button_pushed(9) && !button_pushed(10)) {
+      set_digit_off();
       turn_all_leds_off();
       // All blues
       if (button_pushed(2)) {
