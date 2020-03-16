@@ -47,7 +47,7 @@ void app()
         current_digit--;
       }
       set_digit(current_digit % 10);
-    } else {
+    } else if (!button_pushed(9)){
       set_digit_off();
       // Inc / Dec LEDs count if 7 or 6 button pressed
       if (button_pushed(7)) {
@@ -57,6 +57,35 @@ void app()
       }
       turn_all_leds_off();
       turn_leds_on(inc_dec_leds_mapping[current_inc_dec_led % 10]);
+    }
+
+    // Buttons by colors
+    if (button_pushed(9) && !button_pushed(10)) {
+      turn_all_leds_off();
+      // All blues
+      if (button_pushed(2)) {
+        turn_leds_on(LED_4 | LED_5 | LED_9);
+      } else {
+        turn_leds_off(LED_4 | LED_5 | LED_9);
+      }
+      // All reds
+      if (button_pushed(3)) {
+        turn_leds_on(LED_1 | LED_6 | LED_11 | LED_15);
+      } else {
+        turn_leds_off(LED_1 | LED_6 | LED_11 | LED_15);
+      }
+      // All yellows
+      if (button_pushed(1)) {
+        turn_leds_on(LED_3 | LED_13 | LED_14);
+      } else {
+        turn_leds_off(LED_3 | LED_13 | LED_14);
+      }
+      // All greens
+      if (button_pushed(4)) {
+        turn_leds_on(LED_2 | LED_8 | LED_10);
+      } else {
+        turn_leds_off(LED_2 | LED_8 | LED_10);
+      }
     }
 
     // Sleep until next button press / RTC

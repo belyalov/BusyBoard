@@ -34,7 +34,7 @@ void turn_leds_off(uint32_t leds)
 
 void turn_all_leds_off()
 {
-  all_leds_state &= ~0xffff00;
+  all_leds_state &= ~0xffffff00;
 
   transfer_leds_state();
 }
