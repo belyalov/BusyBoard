@@ -15,7 +15,31 @@ extern UART_HandleTypeDef huart1;
 extern SPI_HandleTypeDef hspi1;
 // extern ADC_HandleTypeDef hadc;
 
+#define LED_1        (1 << 24)
+#define LED_2        (1 << 25)
+#define LED_3        (1 << 26)
+#define LED_4        (1 << 27)
+#define LED_5        (1 << 28)
+#define LED_6        (1 << 29)
+#define LED_7        (1 << 30)
+#define LED_8        (1 << 31)
+#define LED_9        (1 << 16)
+#define LED_10       (1 << 17)
+#define LED_11       (1 << 18)
+#define LED_12       (1 << 19)
+#define LED_13       (1 << 20)
+#define LED_14       (1 << 21)
+#define LED_15       (1 << 22)
+
 void app();
+
+void set_digit(uint8_t digit);
+void set_digit_off();
+
+void turn_leds_on(uint32_t leds);
+void turn_leds_off(uint32_t leds);
+void turn_all_leds_off();
+
 void deep_sleep();
 
 #endif

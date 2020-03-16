@@ -37,7 +37,10 @@ BUILD_DIR = build
 # C sources
 C_SOURCES =  \
 Src/app.c \
+Src/app_digit.c \
+Src/app_leds.c \
 Src/app_sleep.c \
+Src/app_buttons.c \
 Src/main.c \
 Vendor/stm32-hal-libraries/debug.c \
 Src/stm32l1xx_it.c \

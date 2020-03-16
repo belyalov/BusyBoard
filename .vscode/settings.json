@@ -12,5 +12,6 @@
         "leds",
         "strln"
     ],
-    "C_Cpp.formatting": "Disabled"
+    "C_Cpp.formatting": "Disabled",
+    "editor.tabSize": 2
 }
