@@ -38,3 +38,10 @@ void turn_all_leds_off()
 
   transfer_leds_state();
 }
+
+void turn_everything_off()
+{
+  all_leds_state = 0;
+
+  transfer_leds_state();
+}

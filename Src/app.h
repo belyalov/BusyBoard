@@ -39,6 +39,15 @@ void set_digit_off();
 void turn_leds_on(uint32_t leds);
 void turn_leds_off(uint32_t leds);
 void turn_all_leds_off();
+void turn_everything_off();
+
+// Returns port state by button number
+uint8_t button_pushed(uint8_t num);
+
+// Returns port state of last pressed button
+GPIO_PinState last_button_state();
+// Returns number of last pressed button
+uint8_t       last_button_pressed();
 
 void deep_sleep();
 
