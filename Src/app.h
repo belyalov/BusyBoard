@@ -13,7 +13,10 @@
 
 extern UART_HandleTypeDef huart1;
 extern SPI_HandleTypeDef hspi1;
+extern RTC_HandleTypeDef hrtc;
 // extern ADC_HandleTypeDef hadc;
+
+extern volatile uint8_t board_not_in_use;
 
 #define LED_1        (1 << 24)
 #define LED_2        (1 << 25)
@@ -50,5 +53,6 @@ GPIO_PinState last_button_state();
 uint8_t       last_button_pressed();
 
 void deep_sleep();
+void sleep();
 
 #endif

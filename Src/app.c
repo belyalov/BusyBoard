@@ -29,6 +29,15 @@ void app()
     DEBUG_UINT_LN("woke up, last btn ", last_btn);
     DEBUG_UINT_LN("                  ", button_state(last_btn));
 
+    // If board is not being used...
+    if (board_not_in_use) {
+      board_not_in_use = 0;
+      DEBUGLN("Board is not being used, turning OFF");
+      deep_sleep();
+      DEBUGLN("Board turned ON");
+      continue;
+    }
+
     // Rocker switch: turn board on/off
     if (last_btn == 5) {
       DEBUGLN("Board turned OFF");
