@@ -77,7 +77,7 @@ void app()
         leds |= LED_13;
       }
       turn_leds_on(leds);
-      continue;
+      goto done;
     }
 
     // All cords put ON: moving LED light controlled by buttons near to digit
@@ -90,7 +90,7 @@ void app()
       }
       turn_all_leds_off();
       turn_leds_on(inc_dec_leds_mapping[current_inc_dec_led % 10]);
-      continue;
+      goto done;
     }
 
     // Digit scenario: right cord put into socket
@@ -134,6 +134,7 @@ void app()
       }
     }
 
+done:
     // Sleep until next button press / RTC
     sleep();
   }
