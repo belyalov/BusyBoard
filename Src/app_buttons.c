@@ -73,5 +73,5 @@ GPIO_PinState last_button_state()
 void HAL_GPIO_EXTI_Callback(uint16_t pin)
 {
   last_interrupt_pin = pin;
-  // DEBUG_UINT_LN("interrupt on ", last_button_pressed());
+  DEBUG_UINT_LN("interrupt on ", last_button_pressed());
 }
