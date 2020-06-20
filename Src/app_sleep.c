@@ -8,12 +8,14 @@ void SystemClock_Config();
 
 void sleep()
 {
+  DEBUGLN("sleep");
   HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 120, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
   HAL_SuspendTick();
   HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
   HAL_ResumeTick(); 
   HAL_Delay(10);
+  DEBUGLN("woke up");
 }
 
 void deep_sleep()

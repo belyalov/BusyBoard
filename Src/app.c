@@ -19,7 +19,21 @@ const static uint32_t inc_dec_leds_mapping[10] = {
 void app()
 {
   HAL_Delay(1000);
-  DEBUGLN("\nBusyBoard started!");
+  DEBUGLN("BusyBoard started!");
+
+  // HAL_SPI_DeInit(&hspi1);
+  // DEBUGLN("deepsl");
+  HAL_GPIO_WritePin(EN_12V_GPIO_Port, EN_12V_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(BATT_PWR_GPIO_Port, BATT_PWR_Pin, GPIO_PIN_SET);
+  // HAL_GPIO_WritePin(LATCH_GPIO_Port, LATCH_Pin, GPIO_PIN_SET);
+  turn_everything_off();
+
+  HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
+  HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+  __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
+
+  // deep_sleep();
+  DEBUGLN("deep woke");
 
   set_digit_off();
   turn_all_leds_off();

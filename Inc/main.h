@@ -100,6 +100,8 @@ void Error_Handler(void);
 #define BATT_CHRG_Pin GPIO_PIN_7
 #define BATT_CHRG_GPIO_Port GPIOB
 #define BATT_CHRG_EXTI_IRQn EXTI9_5_IRQn
+#define BATT_PWR_Pin GPIO_PIN_9
+#define BATT_PWR_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
